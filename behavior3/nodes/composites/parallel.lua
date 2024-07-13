@@ -7,9 +7,9 @@ local bret = require 'behavior3.behavior_ret'
 local M = {
     name = 'Parallel',
     type = 'Composite',
-    desc = '并行执行',
+    desc = 'Parallel execution',
     doc = [[
-        执行所有子节点并返回成功
+        Execute all child nodes and return success
     ]],
     run = function(node, env)
         local last_idx, last_ret = node:resume(env)

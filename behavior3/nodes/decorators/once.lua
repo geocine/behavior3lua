@@ -9,11 +9,11 @@ local sformat = string.format
 local M = {
     name = "Once",
     type = "Decorator",
-    desc = "只执行一次",
+    desc = "Execute only once",
     doc = [[
-        + 只能有一个子节点,多个仅执行第一个
-        + 被打断后该节点后的子节点依旧不会执行
-        + 该节点执行后永远返回成功
+        + Can only have one child node, if there are multiple, only the first one is executed
+        + After being interrupted, the subsequent child nodes will still not be executed
+        + This node always returns success after execution
     ]],
     run = function(node, env)
         local key = sformat("%s#%d_once", node.name, node.id)

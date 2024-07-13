@@ -7,10 +7,10 @@ local bret = require 'behavior3.behavior_ret'
 local M = {
     name = 'AlwaysSuccess',
     type = 'Decorator',
-    desc = '始终返回成功',
+    desc = 'Always returns success',
     doc = [[
-        + 只能有一个子节点,多个仅执行第一个
-        + 不管子节点是否成功都返回成功
+        + Can only have one child node, if there are multiple, only the first one is executed
+        + Returns success regardless of whether the child node succeeds
     ]],
     run = function(node, env)
         local yeild, last_ret = node:resume(env)

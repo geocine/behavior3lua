@@ -7,14 +7,14 @@ local bret = require 'behavior3.behavior_ret'
 local M = {
     name = 'AlwaysFail',
     type = 'Decorator',
-    desc = '始终返回失败',
+    desc = 'Always returns failure',
     doc = [[
-        + 只能有一个子节点,多个仅执行第一个
-        + 不管子节点是否成功都返回失败
+        + Can only have one child node, if there are multiple, only the first one is executed
+        + Returns failure regardless of whether the child node succeeds
     ]],
     run = function(node, env, enemy)
-        local yeild, last_ret = node:resume(env)
-        if yeild then
+        local yield, last_ret = node:resume(env)
+        if yield then
             if last_ret == bret.RUNNING then
                 error(string.format("%s->${%s}#${$d}: unexpected status error",
                     node.tree.name, node.name, node.id))

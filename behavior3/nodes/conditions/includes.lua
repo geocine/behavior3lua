@@ -4,11 +4,11 @@ local bret = require "behavior3.behavior_ret"
 local M = {
     name = "Includes",
     type = "Condition",
-    desc = "判断元素是否在数组中",
-    input = { "数组", "元素" },
+    desc = "Check if an element is in an array",
+    input = { "Array", "Element" },
     doc = [[
-        + 若输入的元素不合法，返回「失败」
-        + 只有数组包含元素时返回「成功」，否则返回「失败」
+        + If the input element is invalid, return "Failure"
+        + Return "Success" only if the array contains the element, otherwise return "Failure"
     ]],
     run = function(node, env, arr, obj)
         if not arr or #arr == 0 then

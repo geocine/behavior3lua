@@ -10,19 +10,19 @@ end
 local M = {
     name = 'Cmp',
     type = 'Condition',
-    desc = '比较值大小',
+    desc = 'Compare value size',
     args = {
-        { name = 'value', type = 'code?', desc = '值' },
+        { name = 'value', type = 'code?', desc = 'Value' },
         { name = 'gt', type = 'int?', desc = '>' },
         { name = 'ge', type = 'int?', desc = '>=' },
         { name = 'eq', type = 'int?', desc = '==' },
         { name = 'le', type = 'int?', desc = '<=' },
         { name = 'lt', type = 'int?', desc = '<' }
     },
-    input = { '值(int)' },
+    input = { 'Value(int)' },
     doc = [[
-        + 若值为空，返回失败
-        + 非整数类型可能会报错
+        + If the value is empty, return failure
+        + Non-integer types may report errors
     ]],
     run = function(node, env, value)
         value = value or node:get_env_args("value", env)

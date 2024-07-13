@@ -1,26 +1,25 @@
 return {
-  -- 复合节点
+  -- Composite nodes
   IfElse          = require "behavior3.nodes.composites.ifelse",
   Parallel        = require "behavior3.nodes.composites.parallel",
   Selector        = require "behavior3.nodes.composites.selector",
   Sequence        = require "behavior3.nodes.composites.sequence",
   
-  -- 装饰节点
+  -- Decorator nodes
   Once               = require "behavior3.nodes.decorators.once",
   Not                = require "behavior3.nodes.decorators.not",
   Inverter           = require "behavior3.nodes.decorators.not",
   AlwaysFail         = require "behavior3.nodes.decorators.always_fail",
   AlwaysSuccess      = require "behavior3.nodes.decorators.always_success",
-  RepeatUntilSuccess = require "behavior3.nodes.decorators.repeat_until_success",
   RepeatUntilFailure = require "behavior3.nodes.decorators.repeat_until_fail",
   RepeatUntilSuccess = require "behavior3.nodes.decorators.repeat_until_success",
 
-  -- 条件节点
+  -- Condition nodes
   Check           = require "behavior3.nodes.conditions.check",
   Cmp             = require "behavior3.nodes.conditions.cmp",
   Includes        = require "behavior3.nodes.conditions.includes",
   
-  -- 行为节点
+  -- Action nodes
   Calculate       = require "behavior3.nodes.actions.calculate",
   Clear           = require "behavior3.nodes.actions.clear",
   Filter          = require "behavior3.nodes.actions.filter",

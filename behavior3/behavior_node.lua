@@ -66,7 +66,7 @@ function mt:run(env)
     assert(ret, self.info)
     if ret == bret.ABORT then
         env.abort = true
-        return bret.RUNNING -- 为了安全退栈
+        return bret.RUNNING -- To safely pop the stack
     end
     if ret ~= bret.RUNNING then
         for i, var_name in ipairs(self.data.output or {}) do
@@ -79,7 +79,7 @@ function mt:run(env)
     end
 
     env.last_ret = ret
-    --print("fini", self.name, self.node_id, table.unpack(vars, 1, #self.data.input))
+    --print("finish", self.name, self.node_id, table.unpack(vars, 1, #self.data.input))
 
     if self.data.debug then
         debugger(self, env, ret)

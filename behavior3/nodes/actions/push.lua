@@ -3,11 +3,11 @@ local bret = require "behavior3.behavior_ret"
 local M = {
     name = "Push",
     type = "Action",
-    desc = "向数组中添加元素",
-    input = { "数组", "元素" },
+    desc = "Add an element to an array",
+    input = { "Array", "Element" },
     doc = [[
-        + 当输入的“数组”不是数组类型时返回「失败」
-        + 其余返回「成功」。
+        + Returns "Failure" when the input "Array" is not an array type
+        + Otherwise returns "Success".
     ]],
     run = function(node, env, arr, value)
         if not arr then

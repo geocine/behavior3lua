@@ -4,19 +4,19 @@ local bret = require "behavior3.behavior_ret"
 local M = {
     name = "Index",
     type = "Action",
-    desc = "索引输入的数组或对象",
+    desc = "Index the input array or object",
     args = {
         {
             name = "idx",
             type = "string",
-            desc = "索引",
+            desc = "Index",
         }
     },
-    input = { "数组", "索引?" },
-    output = { "元素" },
+    input = { "Array", "Index?" },
+    output = { "Element" },
     doc = [[
-        + 合法元素不包括 undefined 和 null
-        + 只有索引到有合法元素时候才会返回「成功」，否则返回「失败」
+        + Valid elements do not include undefined and null
+        + Only returns "Success" when indexing a valid element, otherwise returns "Failure"
     ]],
     run = function(node, env, arr, key)
         if not arr then

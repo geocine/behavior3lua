@@ -7,12 +7,12 @@ local bret = require "behavior3.behavior_ret"
 local M = {
     name = "Log",
     type = "Action",
-    desc = "打印日志",
+    desc = "Print log",
     args = {
         {
             name = "message",
             type = "string",
-            desc = "日志"
+            desc = "Log message"
         }
     },
     run = function(node, env)

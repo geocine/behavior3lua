@@ -4,24 +4,24 @@ local bret = require "behavior3.behavior_ret"
 local M = {
     name = "Random",
     type = "Action",
-    desc = "返回一个随机数",
-    input = { "最小值?", "最大值?" },
-    output = { "随机数" },
+    desc = "Return a random number",
+    input = { "Minimum value?", "Maximum value?" },
+    output = { "Random number" },
     args = {
         {
             name = "min",
             type = "float?",
-            desc = "最小值"
+            desc = "Minimum value"
         },
         {
             name = "max",
             type = "float?",
-            desc = "最大值"
+            desc = "Maximum value"
         },
         {
             name = "floor",
             type = "bool?",
-            desc = "是否向下取整"
+            desc = "Whether to round down"
         }
     },
     run = function(node, env, min, max)

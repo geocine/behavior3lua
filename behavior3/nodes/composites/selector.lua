@@ -7,10 +7,10 @@ local bret = require 'behavior3.behavior_ret'
 local M = {
     name = 'Selector',
     type = 'Composite',
-    desc = '选择执行',
+    desc = 'Select execution',
     doc = [[
-        + 一直往下执行，有子节点返回成功则返回成功，若全部节点返回失败则返回失败
-        + 子节点是或 (OR) 的关系
+        + Keep executing downwards, return success if any child node returns success, return failure if all child nodes return failure
+        + Child nodes have an OR relationship
     ]],
     run = function(node, env)
         local last_idx, last_ret = node:resume(env)

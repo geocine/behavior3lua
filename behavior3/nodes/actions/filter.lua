@@ -4,14 +4,14 @@ local bret = require "behavior3.behavior_ret"
 local M = {
     name = "Filter",
     type = "Action",
-    desc = "返回满足条件的元素",
-    input = { "数组" },
-    output = { "变量", "新数组" },
+    desc = "Return elements that meet the condition",
+    input = { "Array" },
+    output = { "Variable", "New Array" },
     doc = [[
-        + 只能有一个子节点，多个仅执行第一个
-        + 当子节点返回「运行中」时，返回「运行中」状态
-        + 遍历输入数组，将满足条件的元素放入新数组
-        + 当新数组为空时，返回「失败」
+        + Can only have one child node, if multiple, only the first one is executed
+        + When the child node returns "Running", return "Running" status
+        + Traverse the input array, put elements that meet the condition into a new array
+        + When the new array is empty, return "Failure"
     ]],
     run = function(node, env, arr)
         if not arr or #arr == 0 then

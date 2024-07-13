@@ -7,10 +7,10 @@ local bret = require 'behavior3.behavior_ret'
 local M = {
     name = 'Sequence',
     type = 'Composite',
-    desc = '顺序执行',
+    desc = 'Sequential execution',
     doc = [[
-        + 一直往下执行，只有当所有子节点都返回成功, 才返回成功
-        + 子节点是与（AND）的关系
+        + Keep executing downwards, only return success if all child nodes return success
+        + Child nodes have an AND relationship
     ]],
     run = function(node, env)
         local last_idx, last_ret = node:resume(env)

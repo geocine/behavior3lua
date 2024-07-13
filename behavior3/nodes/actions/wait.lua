@@ -10,12 +10,12 @@ local SPEED = 50
 local M = {
     name = 'Wait',
     type = 'Action',
-    desc = '等待',
+    desc = 'Wait',
     args = {
         {
             name = 'time',
             type = 'int',
-            desc = '时间/tick'
+            desc = 'Time/tick'
         }
     },
     run = function(node, env)

@@ -3,20 +3,20 @@ local bret = require "behavior3.behavior_ret"
 local M = {
     name = "Loop",
     type = 'Action',
-    desc = "循环执行",
+    desc = "Execute in a loop",
     doc = [[
-        + 只能有一个子节点，多个仅执行第一个
-        + 当子节点返回「失败」时，退出遍历并返回「失败」状态
-        + 其它情况返回成功/正在运行
+        + Can only have one child node, if multiple, only the first one is executed
+        + When the child node returns "Failure", exit the loop and return "Failure" status
+        + In other cases, return Success/Running
     ]],
     args = {
         {
             name = "count",
             type = "int?",
-            desc = "次数"
+            desc = "Number of iterations"
         },
     },
-    input = { "次数(int)?" },
+    input = { "Count(int)?" },
     run = function(node, env, count)
         count = count or node.args.count
         local last_i, resume_ret = node:resume(env)

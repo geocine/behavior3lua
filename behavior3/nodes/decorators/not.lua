@@ -4,9 +4,9 @@ local bret = require 'behavior3.behavior_ret'
 local M = {
     name = 'Not',
     type = 'Decorator',
-    desc = '取反',
+    desc = 'Negate',
     doc = [[
-        + 将子节点的返回值取反
+        + Negates the return value of the child node
     ]],
     run = function(node, env)
         local r

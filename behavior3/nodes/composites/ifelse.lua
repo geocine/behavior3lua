@@ -25,11 +25,11 @@ end
 local M = {
     name = 'IfElse',
     type = 'Composite',
-    desc = 'If判断',
+    desc = 'If condition',
     doc = [[
-        + 拥有三个子节点(至少两个)
-        + 当第一个子节点返回SUCCESS的时候执行第二个子节点并返回此子节点的返回值
-        + 否则执行第三个子节点并返回这个节点的返回值,若无第三个子节点,则返回FAIL
+        + Has three child nodes (at least two)
+        + When the first child node returns SUCCESS, execute the second child node and return its return value
+        + Otherwise, execute the third child node and return its return value. If there is no third child node, return FAIL
     ]],
     run = function(node, env)
         assert(#node.children >= 2, "at least two children")

@@ -4,9 +4,9 @@ local bret = require "behavior3.behavior_ret"
 local M = {
     name = "Let",
     type = "Action",
-    desc = "定义新的变量名",
-    input = { "变量名" },
-    output = { "新变量名" },
+    desc = "Define a new variable name",
+    input = { "Variable name" },
+    output = { "New variable name" },
     run = function(node, env, value)
         return bret.SUCCESS, value
     end

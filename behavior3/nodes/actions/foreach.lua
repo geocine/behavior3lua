@@ -4,14 +4,14 @@ local bret = require "behavior3.behavior_ret"
 local M = {
     name = "ForEach",
     type = 'Action',
-    desc = "遍历数组",
-    input = { "[{数组}]" },
-    output = { "{变量}" },
+    desc = "Iterate through array",
+    input = { "[{Array}]" },
+    output = { "{Variable}" },
     doc = [[
-        + 只能有一个子节点，多个仅执行第一个
-        + 每次执行子节点前会设置当前遍历到的变量
-        + 当子节点返回失败时，退出遍历并返回失败状态
-        + 其它情况返回成功/正在运行
+        + Can only have one child node, if multiple, only the first one is executed
+        + Sets the current iterated variable before executing the child node each time
+        + When the child node returns failure, exit the iteration and return failure status
+        + In other cases, return success/running
     ]],
     run = function(node, env, arr)
         local last_i, resume_ret = node:resume(env)

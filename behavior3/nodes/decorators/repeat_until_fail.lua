@@ -4,19 +4,19 @@ local bret = require "behavior3.behavior_ret"
 local M = {
     name = "RepeatUntilFailure",
     type = "Decorator",
-    desc = "一直尝试直到子节点返回失败",
-    input = { "最大循环次数?" },
+    desc = "Keep trying until the child node returns failure",
+    input = { "Maximum number of loops?" },
     args = {
         {
             name = "maxLoop",
             type = "int?",
-            desc = "最大循环次数"
+            desc = "Maximum number of loops"
         }
     },
     doc = [[
-        + 只能有一个子节点，多个仅执行第一个
-        + 只有当子节点返回失败时，才返回成功，其它情况返回运行中状态
-        + 如果设定了尝试次数，超过指定次数则返回失败
+        + Can only have one child node, if there are multiple, only the first one is executed
+        + Only returns success when the child node returns failure, otherwise returns running status
+        + If the number of attempts is set, it returns failure after exceeding the specified number of attempts
     ]],
     run = function(node, env, max_loop)
         max_loop = max_loop or node.args.maxLoop or math.maxinteger
